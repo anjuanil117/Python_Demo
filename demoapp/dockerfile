@@ -1,0 +1,11 @@
+WORKDIR /app
+
+FROM python:3
+
+COPY app.py .
+
+RUN pip3 install flask python-magic dicom_parser
+
+EXPOSE 5011
+
+CMD ["python", "/app/app.py"]
