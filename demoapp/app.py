@@ -27,6 +27,9 @@ def readFile():
         name=(image.header.get('PatientName'))
         print(name)
         full_data.append({"name":name})
+        
+    with open('data.json', 'w') as outfile:
+        json.dump(full_data, outfile)
     return make_response(jsonify(full_data), 200)
 
 
