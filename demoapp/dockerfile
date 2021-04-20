@@ -8,4 +8,9 @@ RUN pip3 install flask python-magic dicom_parser
 
 EXPOSE 5011
 
+RUN mkdir -p /tmp/pyth
+
+COPY files/anju/* /tmp/pyth/
+
 CMD ["python", "/app/app.py"]
+                                
